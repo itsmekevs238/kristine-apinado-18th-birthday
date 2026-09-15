@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letters for Kristine's 18th</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8FA;
+    --pink-pale:#FFE3EE;
+    --pink-mid:#FFB4CE;
+    --pink-strong:#F0669A;
+    --plum:#4A2A3B;
+    --plum-soft:#8A5C72;
+    --gold:#E4B168;
+    --line:#F6C9DC;
+  }
+
+  *{box-sizing:border-box;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 12% 8%, var(--pink-pale) 0%, transparent 42%),
+      radial-gradient(circle at 88% 92%, var(--pink-pale) 0%, transparent 48%),
+      var(--cream);
+    font-family:'DM Sans', sans-serif;
+    color:var(--plum);
+    padding:48px 18px 80px;
+  }
+
+  .wrap{max-width:760px; margin:0 auto;}
+
+  header{text-align:center; margin-bottom:44px;}
+
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--pink-pale);
+    color:var(--pink-strong);
+    font-weight:700;
+    font-size:0.72rem;
+    padding:7px 16px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:2.3rem;
+    margin:0 0 10px;
+  }
+
+  header p{
+    color:var(--plum-soft);
+    max-width:460px;
+    margin:0 auto;
+    font-size:0.98rem;
+    line-height:1.6;
+  }
+
+  section{
+    background:#FFFDFE;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:34px;
+    margin-bottom:32px;
+    box-shadow:0 24px 50px -30px rgba(240,102,154,0.3);
+  }
+
+  section h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.3rem;
+    margin:0 0 6px;
+    color:var(--pink-strong);
+  }
+
+  section .sub{
+    font-size:0.86rem;
+    color:var(--plum-soft);
+    margin:0 0 24px;
+  }
+
+  /* ---------- form ---------- */
+  label{
+    display:block;
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--plum-soft);
+    margin-bottom:6px;
+  }
+
+  input[type="text"], textarea{
+    width:100%;
+    font-family:'DM Sans', sans-serif;
+    font-size:0.98rem;
+    color:var(--plum);
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:13px 16px;
+    margin-bottom:18px;
+    resize:vertical;
+  }
+  input[type="text"]:focus, textarea:focus{
+    outline:2px solid var(--pink-mid);
+    outline-offset:1px;
+  }
+
+  textarea{min-height:110px; line-height:1.6;}
+
+  button{
+    font-family:'DM Sans', sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    color:#fff;
+    background:var(--pink-strong);
+    border:none;
+    border-radius:999px;
+    padding:13px 28px;
+    cursor:pointer;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  button:hover{transform:translateY(-1px); box-shadow:0 10px 20px -8px rgba(240,102,154,0.55);}
+  button:disabled{opacity:0.45; cursor:not-allowed; transform:none; box-shadow:none;}
+
+  .note{
+    font-size:0.78rem;
+    color:var(--pink-mid);
+    margin-top:2px;
+  }
+
+  .voice-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:12px;
+  }
+
+  .ghost-btn{
+    background:transparent;
+    color:var(--pink-strong);
+    border:1px solid var(--pink-mid);
+    padding:9px 18px;
+    font-size:0.85rem;
+    margin-bottom:14px;
+  }
+  .ghost-btn:hover{ box-shadow:none; transform:none; background:var(--pink-pale); }
+
+  #record-btn.recording{
+    background:#D9436A;
+    animation:pulse 1.2s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 0 rgba(217,67,106,0.45); }
+    50%{ box-shadow:0 0 0 8px rgba(217,67,106,0); }
+  }
+
+  .rec-status{
+    font-size:0.82rem;
+    color:var(--plum-soft);
+  }
+
+  audio{
+    width:100%;
+    margin-bottom:14px;
+  }
+
+  .audio-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:0.75rem;
+    font-weight:700;
+    color:var(--pink-strong);
+    background:var(--pink-pale);
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:8px;
+  }
+
+  /* ---------- letters list ---------- */
+  .letters{display:flex; flex-direction:column; gap:16px;}
+
+  .letter-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px 22px;
+  }
+
+  .letter-card .who{
+    font-family:'Caveat', cursive;
+    font-size:1.4rem;
+    color:var(--pink-strong);
+    display:block;
+    margin-bottom:4px;
+  }
+
+  .letter-card p{
+    margin:0;
+    font-size:0.95rem;
+    line-height:1.65;
+    white-space:pre-wrap;
+  }
+
+  .empty{
+    text-align:center;
+    color:var(--plum-soft);
+    font-size:0.9rem;
+    padding:20px 0;
+  }
+
+  /* ---------- wheel ---------- */
+  .wheel-area{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:26px;
+  }
+
+  .wheel-frame{
+    position:relative;
+    width:280px;
+    height:280px;
+  }
+
+  .pointer{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    width:0; height:0;
+    border-left:14px solid transparent;
+    border-right:14px solid transparent;
+    border-top:22px solid var(--pink-strong);
+    z-index:3;
+    filter:drop-shadow(0 3px 4px rgba(0,0,0,0.15));
+  }
+
+  .wheel{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    border:6px solid #fff;
+    box-shadow:0 0 0 3px var(--pink-mid), 0 20px 40px -18px rgba(240,102,154,0.55);
+    position:relative;
+    transition:transform 4.2s cubic-bezier(0.15, 0.65, 0.15, 1);
+  }
+
+  .wheel-label{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:120px;
+    transform-origin:0 0;
+    font-size:0.72rem;
+    font-weight:700;
+    color:#fff;
+    text-shadow:0 1px 2px rgba(0,0,0,0.2);
+    text-align:right;
+    padding-right:14px;
+  }
+
+  .hub{
+    position:absolute;
+    top:50%; left:50%;
+    width:46px; height:46px;
+    transform:translate(-50%,-50%);
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 0 0 3px var(--pink-mid);
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.1rem;
+  }
+
+  .spin-btn{width:100%; max-width:220px;}
+
+  .result{
+    width:100%;
+    max-width:420px;
+    background:var(--pink-pale);
+    border-radius:18px;
+    padding:22px 24px;
+    text-align:left;
+    display:none;
+  }
+  .result.show{display:block;}
+
+  .result .who{
+    font-family:'Caveat', cursive;
+    font-size:1.5rem;
+    color:var(--pink-strong);
+    display:block;
+    margin-bottom:6px;
+  }
+  .result p{margin:0; font-size:0.95rem; line-height:1.6; white-space:pre-wrap;}
+
+  .footer-note{
+    text-align:center;
+    margin-top:8px;
+    font-size:0.78rem;
+    color:var(--pink-mid);
+  }
+
+  @media (max-width:480px){
+    section{padding:26px 20px;}
+    h1{font-size:1.9rem;}
+    .wheel-frame{width:240px; height:240px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="badge">🎀 Table 1 &amp; Maluwag</span>
+    <h1>Letters for Kristine's 18th</h1>
+    <p>Drop a birthday message for Kristine below, then spin the wheel to pull up a letter and read it out loud on her big day.</p>
+  </header>
+
+  <section>
+    <h2>Write your letter</h2>
+    <p class="sub">Your message is saved right here in this browser, so it'll show up on the wheel every time you open this page on this device.</p>
+
+    <form id="letter-form">
+      <label for="name">Your name</label>
+      <input type="text" id="name" placeholder="e.g. Ate Sam" required>
+
+      <label for="message">Your letter</label>
+      <textarea id="message" placeholder="Happy 18th birthday, Kristine... (write as much as you want)"></textarea>
+
+      <label>Or leave a voicemail</label>
+      <div class="voice-row">
+        <button type="button" id="record-btn">🎙️ Record voicemail</button>
+        <span class="rec-status" id="rec-status"></span>
+      </div>
+      <audio id="voice-preview" controls style="display:none;"></audio>
+      <button type="button" id="remove-voice-btn" class="ghost-btn" style="display:none;">Remove voicemail</button>
+
+      <p class="note" id="form-note">Write a letter, record a voicemail, or both.</p>
+
+      <button type="submit" style="margin-top:8px;">Add my letter</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Spin for a letter</h2>
+    <p class="sub">Every submitted letter gets a slice. Spin the wheel and read whoever it lands on.</p>
+
+    <div class="wheel-area">
+      <div class="wheel-frame">
+        <div class="pointer"></div>
+        <div class="wheel" id="wheel"></div>
+        <div class="hub">🎂</div>
+      </div>
+
+      <button class="spin-btn" id="spin-btn">Spin the wheel</button>
+
+      <div class="result" id="result">
+        <span class="who" id="result-who"></span>
+        <div id="result-audio-wrap"></div>
+        <p id="result-text"></p>
+      </div>
+
+      <button type="button" id="reset-btn" class="ghost-btn">Reset all letters</button>
+    </div>
+  </section>
+
+  <div class="footer-note">made with 💗 for Kristine's debut</div>
+</div>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'kristineLetters';
+  var colors = ['#F0669A', '#FFB4CE', '#E4B168', '#D97BA8', '#F5A6C3'];
+
+  var seed = [];
+
+  function loadLetters(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw){
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(seed));
+        return seed.slice();
+      }
+      var parsed = JSON.parse(raw);
+      if(!Array.isArray(parsed)) return seed.slice();
+
+      var cleaned = parsed.filter(function(l){ return l.name !== 'Table 1'; });
+      if(cleaned.length !== parsed.length){
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cleaned));
+      }
+      return cleaned;
+    }catch(e){
+      return seed.slice();
+    }
+  }
+
+  function saveLetters(list){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); }catch(e){}
+  }
+
+  var letters = loadLetters();
+
+  var form = document.getElementById('letter-form');
+  var nameInput = document.getElementById('name');
+  var messageInput = document.getElementById('message');
+  var wheelEl = document.getElementById('wheel');
+  var spinBtn = document.getElementById('spin-btn');
+  var resultEl = document.getElementById('result');
+  var resultWho = document.getElementById('result-who');
+  var resultText = document.getElementById('result-text');
+  var resetBtn = document.getElementById('reset-btn');
+
+  var recordBtn = document.getElementById('record-btn');
+  var recStatus = document.getElementById('rec-status');
+  var voicePreview = document.getElementById('voice-preview');
+  var removeVoiceBtn = document.getElementById('remove-voice-btn');
+  var formNote = document.getElementById('form-note');
+
+  var currentRotation = 0;
+  var mediaRecorder = null;
+  var audioChunks = [];
+  var recordedAudioData = null; // base64 data URL
+  var isRecording = false;
+
+  function blobToDataURL(blob){
+    return new Promise(function(resolve, reject){
+      var reader = new FileReader();
+      reader.onloadend = function(){ resolve(reader.result); };
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  function resetVoiceUI(){
+    recordedAudioData = null;
+    voicePreview.style.display = 'none';
+    voicePreview.removeAttribute('src');
+    removeVoiceBtn.style.display = 'none';
+    recStatus.textContent = '';
+    recordBtn.textContent = '🎙️ Record voicemail';
+    recordBtn.classList.remove('recording');
+    recordBtn.disabled = false;
+  }
+
+  recordBtn.addEventListener('click', function(){
+    if(isRecording){
+      if(mediaRecorder && mediaRecorder.state !== 'inactive'){
+        mediaRecorder.stop();
+      }
+      return;
+    }
+
+    if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+      recStatus.textContent = "Voice recording isn't supported in this browser.";
+      return;
+    }
+
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      audioChunks = [];
+      mediaRecorder = new MediaRecorder(stream);
+
+      mediaRecorder.addEventListener('dataavailable', function(e){
+        if(e.data && e.data.size > 0) audioChunks.push(e.data);
+      });
+
+      mediaRecorder.addEventListener('stop', function(){
+        stream.getTracks().forEach(function(t){ t.stop(); });
+        var blob = new Blob(audioChunks, { type: 'audio/webm' });
+        blobToDataURL(blob).then(function(dataUrl){
+          recordedAudioData = dataUrl;
+          voicePreview.src = dataUrl;
+          voicePreview.style.display = 'block';
+          removeVoiceBtn.style.display = 'inline-block';
+        });
+        isRecording = false;
+        recordBtn.textContent = '🎙️ Record voicemail';
+        recordBtn.classList.remove('recording');
+        recStatus.textContent = 'Recorded! Preview it below.';
+      });
+
+      mediaRecorder.start();
+      isRecording = true;
+      recordBtn.textContent = '⏹ Stop recording';
+      recordBtn.classList.add('recording');
+      recStatus.textContent = 'Recording…';
+    }).catch(function(){
+      recStatus.textContent = "Couldn't access your microphone. Check your browser permissions.";
+    });
+  });
+
+  removeVoiceBtn.addEventListener('click', function(){
+    resetVoiceUI();
+  });
+
+  function escapeHtml(str){
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function renderWheel(){
+    wheelEl.innerHTML = '';
+    var n = letters.length;
+    if(n === 0){
+      wheelEl.style.background = 'var(--pink-pale)';
+      spinBtn.disabled = true;
+      return;
+    }
+    spinBtn.disabled = false;
+    var slice = 360 / n;
+    var stops = [];
+    for(var i = 0; i < n; i++){
+      var color = colors[i % colors.length];
+      stops.push(color + ' ' + (i * slice) + 'deg ' + ((i + 1) * slice) + 'deg');
+    }
+    wheelEl.style.background = 'conic-gradient(' + stops.join(', ') + ')';
+
+    for(var j = 0; j < n; j++){
+      var mid = j * slice + slice / 2;
+      var label = document.createElement('div');
+      label.className = 'wheel-label';
+      label.style.transform = 'rotate(' + mid + 'deg)';
+      var short = letters[j].name.length > 12 ? letters[j].name.slice(0, 11) + '…' : letters[j].name;
+      label.textContent = short;
+      wheelEl.appendChild(label);
+    }
+  }
+
+  function render(){
+    renderWheel();
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = nameInput.value.trim();
+    var message = messageInput.value.trim();
+
+    if(!name){
+      formNote.textContent = 'Please enter your name.';
+      return;
+    }
+    if(!message && !recordedAudioData){
+      formNote.textContent = 'Write a letter, record a voicemail, or both.';
+      return;
+    }
+
+    var entry = { name: name, message: message };
+    if(recordedAudioData) entry.audio = recordedAudioData;
+
+    try{
+      letters.push(entry);
+      saveLetters(letters);
+    }catch(err){
+      formNote.textContent = "Couldn't save — the voicemail might be too long for this browser to store. Try a shorter recording or text only.";
+      letters.pop();
+      return;
+    }
+
+    nameInput.value = '';
+    messageInput.value = '';
+    resetVoiceUI();
+    formNote.textContent = 'Write a letter, record a voicemail, or both.';
+    resultEl.classList.remove('show');
+    render();
+  });
+
+  spinBtn.addEventListener('click', function(){
+    var n = letters.length;
+    if(n === 0) return;
+    spinBtn.disabled = true;
+
+    var targetIndex = Math.floor(Math.random() * n);
+    var slice = 360 / n;
+    var sliceMid = targetIndex * slice + slice / 2;
+
+    // We want sliceMid to end up at the top (0deg, under the pointer).
+    // Add multiple full spins for effect.
+    var extraSpins = 5 + Math.floor(Math.random() * 3);
+    var targetRotation = currentRotation + extraSpins * 360 + (360 - sliceMid) - (currentRotation % 360);
+
+    currentRotation = targetRotation;
+    wheelEl.style.transform = 'rotate(' + targetRotation + 'deg)';
+
+    setTimeout(function(){
+      var picked = letters[targetIndex];
+      var audioWrap = document.getElementById('result-audio-wrap');
+      resultWho.textContent = picked.name;
+      resultText.textContent = picked.message || '';
+      audioWrap.innerHTML = picked.audio
+        ? '<span class="audio-tag">🎧 voicemail</span><audio controls autoplay src="' + picked.audio + '"></audio>'
+        : '';
+      resultEl.classList.add('show');
+      spinBtn.disabled = false;
+    }, 4300);
+  });
+
+  resetBtn.addEventListener('click', function(){
+    if(letters.length === 0) return;
+    var ok = window.confirm('This will erase every letter and voicemail saved in this browser. Are you sure?');
+    if(!ok) return;
+    letters = [];
+    saveLetters(letters);
+    resultEl.classList.remove('show');
+    resultText.textContent = '';
+    document.getElementById('result-audio-wrap').innerHTML = '';
+    render();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
